@@ -1,0 +1,125 @@
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<main class="main">
+  <div class="slideshow-container">
+    <div
+      class="mySlides"
+      *ngFor="let slide of slides; let i = index"
+      [style.display]="slideIndex === i ? 'block' : 'none'"
+      [ngClass]="{'fade': slideIndex === i}"
+    >
+      <img [src]="slide.image" class="slide-img" [alt]="'Slide ' + (i + 1)" />
+      <div class="slide-text">Mjesto gdje tvoj san postaje stvarnost</div>
+    </div>
+
+    <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+    <a class="next" (click)="plusSlides(1)">&#10095;</a>
+
+    <div class="dot-container">
+      <span
+        class="dot"
+        *ngFor="let dot of slides; let i = index"
+        [class.active-dot]="i === slideIndex"
+        (click)="currentSlide(i)"
+      ></span>
+    </div>
+  </div>
+</main>
+
+<div class="druga-sekcija">
+  <div class="container">
+    <h2> Naši zadovoljni klijenti </h2>
+    <p class="description">Vaše recenzije nisu samo odraz našeg rada, već i vodič za kontinuirano usavršavanje kako bismo vam pružali najbolje moguće iskustvo.
+        Zajedno smo stvarali nezaboravne trenutke, i vaše riječi su svjetla koja nas vode napred. Hvala vam na povjerenju i privilegiji što smo dio vašeg posebnog dana.
+    </p>
+
+    <!-- Clients Review Section -->
+    <div class="reviewSection">
+
+    <!-- Clients Review-1 Section Starts from Here  -->
+        <div class="reviewItem">
+            <div class="top">
+                <div class="clientImage">
+                    <img src="assets/korisnice/1.jpg" alt="">
+                    <span>Jelena Kapor</span>
+                </div>
+                <ul>
+                  <li><mat-icon>star</mat-icon></li>
+                  <li><mat-icon>star</mat-icon></li>
+                  <li><mat-icon>star</mat-icon></li>
+                  <li><mat-icon>star</mat-icon></li>
+                  <li><mat-icon>star</mat-icon></li>
+                </ul>
+            </div>
+            <article>
+                <p class="review">Sve pohvale za izbor vjenčanica, ljubaznost i pomoć prilikom odabira vjenčanice. Preporuka svima da posjete Vaš salon. Srdačan pozdrav 😊😊</p>
+                <p class="date">Jan, 2025.</p>
+            </article>
+        </div>
+
+                <!-- Clients Review-2 Section Starts from Here  -->
+                <div class="reviewItem">
+                    <div class="top">
+                        <div class="clientImage">
+                            <img src="assets/korisnice/2.jpg" alt="">
+                            <span>Amra Dreca Hodžić</span>
+                        </div>
+                        <ul>
+                          <li><mat-icon>star</mat-icon></li>
+                          <li><mat-icon>star</mat-icon></li>
+                          <li><mat-icon>star</mat-icon></li>
+                          <li><mat-icon>star</mat-icon></li>
+                          <li><mat-icon>star</mat-icon></li>
+                        </ul>
+                    </div>
+                    <article>
+                        <p class="review">Ovaj salon osim prelijepe vjenčanice, pružio mi je i predivnu uslugu. Ljubazna uposlenica i vlasnica mi je zaista uvijek bila na raspolaganju sve do samog vjenčanja i pomogla mi pri izboru svih detalja oko dodataka za vjenčanicu, kitnje i svega ostalog. Sve pohvale i preporuka od mene ❤️</p>
+                        <p class="date">Dec, 2024</p>
+                    </article>
+                </div>
+
+    <!-- Clients Review-3 Section Starts from Here  -->
+        <div class="reviewItem">
+            <div class="top">
+                <div class="clientImage">
+                    <img src="assets/korisnice/3.jpg" alt="">
+                    <span>Jovana Rovčanin</span>
+                </div>
+                <ul>
+                  <li><mat-icon>star</mat-icon></li>
+                  <li><mat-icon>star</mat-icon></li>
+                  <li><mat-icon>star</mat-icon></li>
+                  <li><mat-icon>star</mat-icon></li>
+                  <li><mat-icon>star</mat-icon></li>
+                </ul>
+            </div>
+            <article>
+                <p class="review">Od prvog dana sam znala da će ovo biti pravi izbor... sve što sam rekla da želim, Vi ste prstom pokazali na vjenčanicu i to je zaista bila ta. Marina je ljubazna i divna osoba, cijene koretkne, usluga, trud... Hvala na svemu i od mene svaka preporuka! ❣️</p>
+                <p class="date">Nov, 2024.</p>
+            </article>
+        </div>
+    </div>
+  </div>
+</div>
+
+<section class="shorts-section">
+  <div class="overlay">
+    <h2 class="shorts-title">🎥 Upoznajte se sa našom kolekcijom kroz YouTube Shorts</h2>
+    <p class="shorts-subtitle">Upoznajte naš rad kroz kratke video klipove – inspiracija za vaš dan iz snova!</p>
+    
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/PI02xgSAo1A"
+        title="YouTube Shorts"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+
+

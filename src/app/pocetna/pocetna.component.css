@@ -1,0 +1,364 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+@import url('https://fonts.cdnfonts.com/css/magdives');
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+  position: relative;
+  animation: fadeIn 5s forwards;
+}
+
+.slide-img {
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover;
+  display: block;
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 55px;
+  font-family: 'Magdives', sans-serif;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.3s;
+  user-select: none;
+  background-color: none;
+}
+
+.prev:hover, .next:hover {
+  color: #E94560;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.dot-container {
+  text-align: center;
+  padding: 10px;
+  background-color: #e9456015;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.active-dot {
+  background-color: #717171;
+}
+
+.fade {
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+/* ---------------------------- II sekcija ---------------------------- */
+.druga-sekcija {
+  background-color: #e9456015;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.container h2 {
+  color: #1e1e2e;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviewSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.reviewItem {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: transform 0.3s ease;
+}
+
+.reviewItem:hover {
+  transform: translateY(-5px);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.clientImage {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.clientImage img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #E94560;
+}
+
+.clientImage span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1e1e2e;
+  margin: 5px;
+}
+
+ul {
+  margin-top: 15px;
+  display: flex;
+  gap: 1px;
+  list-style: none;
+  padding: 0;
+}
+
+ul li mat-icon {
+  color: #E94560;
+  font-size: 20px;
+}
+
+.review {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.date {
+  text-align: right;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.shorts-section {
+  position: relative;
+  background: url('./../../assets/foto/studio.jpg') center/cover no-repeat;
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+}
+
+.shorts-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* tamni overlay */
+  z-index: 0;
+}
+
+.shorts-section .overlay {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.shorts-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.shorts-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  border: 5px solid #E94560;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 21, 0.4);
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container h2 {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .review {
+    font-size: 0.95rem;
+  }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+  .slide-img {
+    height: 60vh;
+  }
+
+  .slide-text {
+    font-size: 1.8rem;
+    padding: 12px 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-text {
+    font-size: 30px;
+    padding: 10px 20px;
+  }
+
+  .prev, .next {
+    font-size: 24px;
+    padding: 12px;
+  }
+
+  .container h2 {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .shorts-title {
+    font-size: 2rem;
+  }
+
+  .shorts-subtitle {
+    font-size: 1rem;
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-img {
+    height: 40vh;
+  }
+
+  .slide-text {
+    font-size: 22px;
+    padding: 2px 2px;
+  }
+
+  .prev, .next {
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  .reviewItem {
+    padding: 15px;
+  }
+
+  .clientImage img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .clientImage span {
+    font-size: 1rem;
+  }
+
+  ul li mat-icon {
+    font-size: 18px;
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
+  }
+}

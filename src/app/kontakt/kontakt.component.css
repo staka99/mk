@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-wrapper {
+  min-height: 100vh;
+  background-color: #fceae6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contact-card {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 1100px;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+#title-page {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #C82E4B;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.col-1, .col-2 {
+  flex: 1;
+  min-width: 280px;
+}
+
+.address-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+
+.icon-container {
+  width: 60px;
+  height: 60px;
+  background-color: #ffe8e1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+.contact-icon {
+  width: 30px;
+  height: 30px;
+  color: #E94560;
+}
+
+.contact-info-title {
+  font-size: 14px;
+  color: #E94560;
+  font-weight: bold;
+}
+
+.contact-info-text {
+  font-size: 18px;
+  color: #333;
+}
+
+.contact-info a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+}
+
+.map-container {
+  height: 100%;
+  min-height: 400px;
+}
+
+a.address-line:hover {
+  background-color: #ececec;
+  transition: 0.3s;
+  padding: 5px;
+}
+
+.loading-overlay {
+  position: fixed;
+  z-index: 9999;
+  background: #fff0f4;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 8px solid #ffe3eb;
+  border-top: 8px solid #C82E4B;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* === 1024px i ispod === */
+@media (max-width: 1024px) {
+  #title-page {
+    font-size: 2.2rem;
+  }
+
+  .contact-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .icon-container {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-info-title {
+    font-size: 13px;
+  }
+
+  .contact-info-text {
+    font-size: 16px;
+  }
+
+  .map-container {
+    min-height: 350px;
+  }
+}
+
+/* === 768px i ispod (tableti) === */
+@media (max-width: 768px) {
+  .contact-card {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  #title-page {
+    font-size: 2rem;
+  }
+
+  .icon-container {
+    width: 45px;
+    height: 45px;
+  }
+
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-info-title {
+    font-size: 12px;
+  }
+
+  .contact-info-text {
+    font-size: 15px;
+  }
+
+  .map-container {
+    min-height: 300px;
+  }
+
+  a.address-line:hover {
+    transition: 0;
+    padding: 0;
+    text-decoration: none; 
+    background-color: white;
+  }
+  
+}
+
+/* === 420px i ispod (mobilni telefoni) === */
+@media (max-width: 420px) {
+  .contact-card {
+    padding: 20px 15px;
+    gap: 20px;
+  }
+
+  #title-page {
+    font-size: 1.6rem;
+  }
+
+  .icon-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contact-info-title {
+    font-size: 11px;
+  }
+
+  .contact-info-text {
+    font-size: 14px;
+  }
+
+  .map-container {
+    min-height: 250px;
+  }
+
+  a.address-line:hover {
+    transition: 0;
+    padding: 0;
+    text-decoration: none; 
+    background-color: white;
+  }
+}

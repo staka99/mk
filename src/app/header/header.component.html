@@ -1,0 +1,22 @@
+<header>
+  <div class="logo-container">
+    <img src="assets/logo-veliki.png" alt="Salon vjenčanica MK" class="logo" />
+  </div>
+
+  <button class="menu-button" *ngIf="screenWidth <= 1024" (click)="toggleMenu()" [class.open]="menuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav [class.open]="menuOpen">
+    <a routerLink="/pocetna" routerLinkActive="active" (click)="toggleMenu()">Početna</a>
+    <a routerLink="/o-nama" routerLinkActive="active" (click)="toggleMenu()">O nama</a>
+    <a routerLink="/termin" routerLinkActive="active" (click)="toggleMenu()">Zakazivanje termina</a>
+    <a routerLink="/galerija" routerLinkActive="active" (click)="toggleMenu()">Galerija</a>
+    <a routerLink="/kontakt" routerLinkActive="active" (click)="toggleMenu()">Lokacija</a>
+  </nav>
+
+  <!-- Overlay kada je meni otvoren -->
+  <div class="overlay" *ngIf="menuOpen && screenWidth <= 1024" (click)="toggleMenu()"></div>
+</header>

@@ -1,0 +1,29 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- app.component.html -->
+<div *ngIf="isLoading" class="loading-overlay">
+  <div class="spinner"></div>
+</div>
+
+<!-- Galerija se prikazuje tek nakon 3 sekunde -->
+<div *ngIf="!isLoading">
+  <div id="title-page">Galerija</div>
+
+  <div class="gallery-container">
+    <div class="gallery">
+      <div *ngFor="let image of images; let i = index" class="gallery-item" (click)="openImage(i)">
+        <img [src]="image" alt="Slika {{ i + 1 }}" loading="eager" />
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="currentImageIndex !== null" class="modal" (click)="closeImage()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closeImage()">X</button>
+      <img [src]="images[currentImageIndex]" alt="Large Image" class="modal-image" />
+      <button class="prev-btn" (click)="prevImage()">&#10094;</button>
+      <button class="next-btn" (click)="nextImage()">&#10095;</button>
+    </div>
+  </div>
+</div>
