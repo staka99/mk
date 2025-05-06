@@ -29,7 +29,7 @@ export class GalerijaComponent {
   currentImageIndex: number | null = null;
 
   constructor() {
-    for (let i = 1; i <= 50; i++) {
+    for (let i = 1; i <= 54; i++) {
       this.images.push(`assets/galerija/${i}.webp`);
     }
   }
