@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-pocetna',
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, RouterModule],
   templateUrl: './pocetna.component.html',
-  styleUrl: './pocetna.component.css'
+  styleUrls: ['./pocetna.component.css', './pocetna-reviews.component.css']
 })
 export class PocetnaComponent {
   slideIndex = 0;

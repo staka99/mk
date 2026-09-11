@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LightboxModule } from 'ngx-lightbox';
+import { MatIconModule } from '@angular/material/icon';
 
 interface Image {
   src: string;
@@ -11,7 +12,7 @@ interface Image {
 @Component({
   selector: 'app-galerija',
   standalone: true,
-  imports: [CommonModule, LightboxModule],
+  imports: [CommonModule, LightboxModule, MatIconModule],
   templateUrl: './galerija.component.html',
   styleUrls: ['./galerija.component.css']
 })

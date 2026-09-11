@@ -12,6 +12,7 @@ export class HeaderComponent {
 
   menuOpen: boolean = false;
   screenWidth = window.innerWidth;
+  isScrolled = false;
 
   constructor(private router: Router) {
   }
@@ -23,6 +24,11 @@ export class HeaderComponent {
     if (this.screenWidth > 1024 && this.menuOpen) {
       this.menuOpen = false;
     }
+  }
+
+  @HostListener('window:scroll')
+  onScroll() {
+    this.isScrolled = window.scrollY > 10;
   }
 
   toggleMenu() {

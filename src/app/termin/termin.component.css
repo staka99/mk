@@ -1,125 +1,101 @@
 .booking-wrapper {
-  background-color: #fceae6;
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-surface-soft) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 80px 20px;
+  min-height: 70vh;
 }
 
 .booking-card {
-  background-color: #fff;
-  border-radius: 30px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  padding: 40px;
-  max-width: 500px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 52px 48px;
+  max-width: 540px;
   width: 100%;
   text-align: center;
-  font-family: 'Playfair Display', serif;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .booking-title {
-  color: #C82E4B;
-  font-size: 2.3rem;
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
+  color: var(--color-burgundy);
+  font-size: clamp(1.7rem, 3.4vw, 2.2rem);
+  margin: 8px 0 6px;
 }
 
 .booking-subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #555;
+  font-size: 1.05rem;
+  margin: 22px 0 28px;
+  color: var(--color-text-soft);
+  line-height: 1.6;
 }
 
 .booking-options {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
 .booking-button {
-  padding: 14px 20px;
-  border-radius: 30px;
-  color: #fff;
+  padding: 15px 22px;
+  border-radius: var(--radius-full);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  transition: background 0.3s ease;
+  gap: 12px;
+  transition: all var(--transition);
   font-size: 1rem;
+  background: var(--color-surface-soft);
+  color: var(--color-text);
 }
 
-.instagram {
-  background-color: #E94560;
+.booking-button i {
+  font-size: 1.15rem;
+  transition: color var(--transition);
 }
 
-.facebook {
-  background-color: #3b5998;
-}
-
-.viber {
-  background-color: #7360f2;
-}
-
-.whatsapp {
-  background-color: #25D366;
-}
-
-.call {
-  background-color: #E94560;
-}
+.instagram i { color: #d6336c; }
+.facebook i { color: #3b5998; }
+.viber i { color: #7360f2; }
+.whatsapp i { color: #25d366; }
+.call i { color: var(--color-rose-dark); }
 
 .booking-button:hover {
-  opacity: 0.9;
-  transform: scale(1.02);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  color: #fff;
+}
+
+.booking-button:hover i {
+  color: #fff;
+}
+
+.instagram:hover { background: #d6336c; }
+.facebook:hover { background: #3b5998; }
+.viber:hover { background: #7360f2; }
+.whatsapp:hover { background: #25d366; }
+.call:hover { background: var(--color-rose-dark); }
+
+.booking-note {
+  font-size: 1rem;
+  color: var(--color-rose-dark);
+  font-weight: 500;
+  margin-bottom: 6px;
 }
 
 .booking-footer {
-  font-size: 1rem;
-  color: #777;
-}
-
-/* Responzivnost */
-@media (max-width: 768px) {
-  .booking-card {
-    padding: 30px 20px;
-  }
-
-  .booking-title {
-    font-size: 1.8rem;
-  }
-
-  .booking-subtitle {
-    font-size: 1rem;
-  }
-
-  .booking-button {
-    font-size: 0.95rem;
-    padding: 12px 16px;
-  }
-}
-
-@media (max-width: 420px) {
-  .booking-title {
-    font-size: 1.5rem;
-  }
-
-  .booking-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .booking-button {
-    font-size: 0.9rem;
-    padding: 10px 14px;
-  }
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -127,6 +103,27 @@
   }
 }
 
-.booking-card {
-  animation: fadeInUp 0.6s ease-out;
+@media (max-width: 768px) {
+  .booking-card {
+    padding: 40px 28px;
+  }
+
+  .booking-button {
+    font-size: 0.95rem;
+    padding: 13px 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .booking-wrapper {
+    padding: 56px 16px;
+  }
+
+  .booking-card {
+    padding: 32px 20px;
+  }
+
+  .booking-subtitle {
+    font-size: 0.95rem;
+  }
 }

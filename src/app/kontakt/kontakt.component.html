@@ -1,29 +1,29 @@
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-
 <div *ngIf="isLoading" class="loading-overlay">
   <div class="spinner"></div>
 </div>
 
-<div class="contact-wrapper">
-  <div class="contact-card">
-    <div id="title-page">Gdje se nalazimo</div>
+<div class="contact-wrapper" *ngIf="!isLoading">
+  <div class="section-head page-head">
+    <span class="eyebrow">Posjetite nas</span>
+    <h1 class="page-title">Gdje se nalazimo</h1>
+    <div class="divider-gold"></div>
+  </div>
 
+  <div class="contact-card">
     <div class="col-1">
-      <!-- Telefon -->
-      <a href="tel:+38765215007" target="_blank" class="address-line" style="text-decoration: none; color: inherit;">
+      <a href="tel:+38765215007" class="address-line">
         <div class="icon-container">
-          <img src="https://img.icons8.com/ios-filled/50/000000/phone.png" class="contact-icon" alt="Telefon">
+          <mat-icon>call</mat-icon>
         </div>
         <div class="contact-info">
           <div class="contact-info-title">Telefon</div>
-          <a href="tel:+38765215007" class="contact-info-text">+387 65 215 007</a>
+          <div class="contact-info-text">+387 65 215 007</div>
         </div>
       </a>
 
-      <!-- Lokacija -->
-      <a href="https://maps.app.goo.gl/Fgxxtc6q7cYE4i1L9" target="_blank" class="address-line" style="text-decoration: none; color: inherit;">
+      <a href="https://maps.app.goo.gl/Fgxxtc6q7cYE4i1L9" target="_blank" class="address-line">
         <div class="icon-container">
-          <img src="https://img.icons8.com/ios-filled/50/000000/marker.png" class="contact-icon" alt="Lokacija">
+          <mat-icon>location_on</mat-icon>
         </div>
         <div class="contact-info">
           <div class="contact-info-title">Lokacija</div>
@@ -31,10 +31,9 @@
         </div>
       </a>
 
-      <!-- Viber -->
       <a href="viber://chat?number=+38765215007" class="address-line">
         <div class="icon-container">
-          <img src="https://img.icons8.com/ios-filled/50/000000/viber.png" class="contact-icon" alt="Viber">
+          <mat-icon>chat</mat-icon>
         </div>
         <div class="contact-info">
           <div class="contact-info-title">Online kontakt</div>
@@ -42,10 +41,9 @@
         </div>
       </a>
 
-      <!-- WhatsApp -->
       <a href="https://wa.me/38765215007" target="_blank" class="address-line">
         <div class="icon-container">
-          <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" class="contact-icon" alt="WhatsApp">
+          <mat-icon>chat</mat-icon>
         </div>
         <div class="contact-info">
           <div class="contact-info-title">Online kontakt</div>
@@ -56,7 +54,7 @@
 
     <div class="col-2">
       <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.077451932152!2d18.3598748!3d43.8177588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c9bcadbdd937%3A0xc4fd43776ee7335a!2sSalon%20vjencanica%20MK%20Sarajevo!5e0!3m2!1sen!2sba!4v1644282427024!5m2!1sen!2sba" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2927.077451932152!2d18.3598748!3d43.8177588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c9bcadbdd937%3A0xc4fd43776ee7335a!2sSalon%20vjencanica%20MK%20Sarajevo!5e0!3m2!1sen!2sba!4v1644282427024!5m2!1sen!2sba" allowfullscreen="" loading="lazy" title="Lokacija salona na mapi"></iframe>
       </div>
     </div>
   </div>
