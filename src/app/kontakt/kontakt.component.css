@@ -66,30 +66,6 @@
   min-height: 420px;
 }
 
-.loading-overlay {
-  position: fixed;
-  z-index: 9999;
-  background: var(--color-dark);
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.spinner {
-  border: 6px solid rgba(255, 255, 255, 0.15);
-  border-top: 6px solid var(--color-gold);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 0.9s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 @media (max-width: 900px) {
   .contact-split {
     flex-direction: column;

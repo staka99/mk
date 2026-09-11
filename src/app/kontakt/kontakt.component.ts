@@ -9,13 +9,4 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './kontakt.component.css'
 })
 export class KontaktComponent {
-
-  isLoading = true;
-
-  ngOnInit() {
-    setTimeout(() => {
-      this.isLoading = false;
-    },2000); // 
-  }
-
 }
