@@ -17,16 +17,7 @@ interface Image {
   styleUrls: ['./galerija.component.css']
 })
 export class GalerijaComponent {
-  isLoading = true;
-  imagesLoaded = 0;
   images: string[] = [];
-
-  ngOnInit() {
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 3000); // 👈 Loader traje 3 sekunde
-  }
-
   currentImageIndex: number | null = null;
 
   constructor() {
@@ -37,6 +28,10 @@ export class GalerijaComponent {
 
   openImage(index: number) {
     this.currentImageIndex = index;
+  }
+
+  onImageLoad(event: Event) {
+    (event.target as HTMLImageElement).classList.add('loaded');
   }
 
   closeImage() {

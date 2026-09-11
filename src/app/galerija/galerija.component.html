@@ -1,38 +1,31 @@
-<div *ngIf="isLoading" class="loading-overlay">
-  <div class="spinner"></div>
-</div>
+<section class="page-banner">
+  <span class="watermark">MK</span>
+  <span class="kicker kicker-center">Naš portfolio</span>
+  <h1>Galerija</h1>
+</section>
 
-<!-- Galerija se prikazuje tek nakon učitavanja -->
-<div *ngIf="!isLoading">
-  <section class="page-banner">
-    <span class="watermark">MK</span>
-    <span class="kicker kicker-center">Naš portfolio</span>
-    <h1>Galerija</h1>
-  </section>
-
-  <div class="gallery-container">
-    <div class="gallery">
-      <div *ngFor="let image of images; let i = index" class="gallery-item" (click)="openImage(i)">
-        <img [src]="image" alt="Vjenčanica {{ i + 1 }}" loading="eager" />
-        <div class="gallery-item-overlay">
-          <mat-icon>zoom_in</mat-icon>
-        </div>
+<div class="gallery-container">
+  <div class="gallery">
+    <div *ngFor="let image of images; let i = index" class="gallery-item" (click)="openImage(i)">
+      <img [src]="image" alt="Vjenčanica {{ i + 1 }}" loading="lazy" decoding="async" (load)="onImageLoad($event)" />
+      <div class="gallery-item-overlay">
+        <mat-icon>zoom_in</mat-icon>
       </div>
     </div>
   </div>
+</div>
 
-  <div *ngIf="currentImageIndex !== null" class="modal" (click)="closeImage()">
-    <div class="modal-content" (click)="$event.stopPropagation()">
-      <button class="close-btn" (click)="closeImage()" aria-label="Zatvori">
-        <mat-icon>close</mat-icon>
-      </button>
-      <img [src]="images[currentImageIndex]" alt="Uvećana slika" class="modal-image" />
-      <button class="prev-btn" (click)="prevImage()" aria-label="Prethodna">
-        <mat-icon>chevron_left</mat-icon>
-      </button>
-      <button class="next-btn" (click)="nextImage()" aria-label="Sljedeća">
-        <mat-icon>chevron_right</mat-icon>
-      </button>
-    </div>
+<div *ngIf="currentImageIndex !== null" class="modal" (click)="closeImage()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeImage()" aria-label="Zatvori">
+      <mat-icon>close</mat-icon>
+    </button>
+    <img [src]="images[currentImageIndex]" alt="Uvećana slika" class="modal-image" />
+    <button class="prev-btn" (click)="prevImage()" aria-label="Prethodna">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button class="next-btn" (click)="nextImage()" aria-label="Sljedeća">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
   </div>
 </div>
