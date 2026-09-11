@@ -4,11 +4,27 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: transparent;
-  transition: background var(--transition), box-shadow var(--transition);
 }
 
-header.scrolled {
+/*
+ * The scrolled background/blur lives on this pseudo-element rather than
+ * directly on <header> so that <header> never has its own filter/backdrop-filter.
+ * A filter or backdrop-filter on an element creates a new containing block for
+ * its position:fixed descendants — since .nav-mobile is a fixed-position child
+ * of <header>, putting backdrop-filter on <header> itself would make the
+ * mobile menu size/position itself relative to the (short) header box instead
+ * of the viewport once scrolled, squashing it into a small scrollable strip.
+ */
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: transparent;
+  transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+}
+
+header.scrolled::before {
   background: rgba(43, 31, 34, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
