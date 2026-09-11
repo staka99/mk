@@ -1,24 +1,39 @@
 <header [class.scrolled]="isScrolled">
   <div class="header-inner">
-    <a routerLink="/pocetna" class="logo-container" aria-label="Salon vjenčanica MK – početna">
-      <img src="assets/logo-veliki.png" alt="Salon vjenčanica MK" class="logo" />
+    <a routerLink="/pocetna" class="brand" aria-label="Salon vjenčanica MK – početna" (click)="closeMenu()">
+      <img src="assets/logo.png" alt="" class="brand-mark" />
+      <span class="brand-word">Salon <em>vjenčanica</em> MK</span>
     </a>
 
-    <button class="menu-button" *ngIf="screenWidth <= 1024" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Meni">
+    <nav class="nav-desktop">
+      <a routerLink="/pocetna" routerLinkActive="active">Početna</a>
+      <a routerLink="/o-nama" routerLinkActive="active">O nama</a>
+      <a routerLink="/galerija" routerLinkActive="active">Galerija</a>
+      <a routerLink="/kontakt" routerLinkActive="active">Lokacija</a>
+      <a routerLink="/termin" routerLinkActive="active" class="nav-cta">Zakazivanje termina</a>
+    </nav>
+
+    <button class="menu-button" (click)="toggleMenu()" [class.open]="menuOpen" aria-label="Meni">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
-    <nav [class.open]="menuOpen">
-      <a routerLink="/pocetna" routerLinkActive="active" (click)="toggleMenu()">Početna</a>
-      <a routerLink="/o-nama" routerLinkActive="active" (click)="toggleMenu()">O nama</a>
-      <a routerLink="/galerija" routerLinkActive="active" (click)="toggleMenu()">Galerija</a>
-      <a routerLink="/kontakt" routerLinkActive="active" (click)="toggleMenu()">Lokacija</a>
-      <a routerLink="/termin" routerLinkActive="active" (click)="toggleMenu()" class="nav-cta">Zakazivanje termina</a>
-    </nav>
   </div>
 
-  <!-- Overlay kada je meni otvoren -->
-  <div class="overlay" *ngIf="menuOpen && screenWidth <= 1024" (click)="toggleMenu()"></div>
+  <div class="nav-mobile" [class.open]="menuOpen">
+    <nav>
+      <a routerLink="/pocetna" routerLinkActive="active" (click)="closeMenu()"><span class="nav-mobile-num">01</span>Početna</a>
+      <a routerLink="/o-nama" routerLinkActive="active" (click)="closeMenu()"><span class="nav-mobile-num">02</span>O nama</a>
+      <a routerLink="/galerija" routerLinkActive="active" (click)="closeMenu()"><span class="nav-mobile-num">03</span>Galerija</a>
+      <a routerLink="/kontakt" routerLinkActive="active" (click)="closeMenu()"><span class="nav-mobile-num">04</span>Lokacija</a>
+      <a routerLink="/termin" routerLinkActive="active" (click)="closeMenu()"><span class="nav-mobile-num">05</span>Zakazivanje termina</a>
+    </nav>
+    <div class="nav-mobile-footer">
+      <a href="tel:+38765215007">+387 65 215 007</a>
+      <div class="nav-mobile-socials">
+        <a href="https://www.instagram.com/salonvjencanica.mk/" aria-label="Instagram" target="_blank"><mat-icon>photo_camera</mat-icon></a>
+        <a href="https://www.facebook.com/salonvjencanicamk1" aria-label="Facebook" target="_blank"><mat-icon>facebook</mat-icon></a>
+      </div>
+    </div>
+  </div>
 </header>

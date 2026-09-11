@@ -58,7 +58,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-heading);
   font-weight: 600;
   color: var(--color-burgundy);
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 img {
@@ -92,16 +92,36 @@ a, button {
   background: var(--color-rose);
 }
 
-/* ---------- Shared section header pattern ---------- */
-.section-head {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 24px 44px;
+/* ---------- Editorial kicker label ---------- */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold);
 }
 
-.section-head.page-head {
-  padding-top: 68px;
+.kicker::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.kicker-center {
+  justify-content: center;
+}
+
+.kicker-center::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
 }
 
 .eyebrow {
@@ -111,17 +131,21 @@ a, button {
   font-weight: 500;
   font-size: 1.2rem;
   color: var(--color-rose-dark);
-  margin-bottom: 8px;
+}
+
+/* ---------- Section header (light, in-page) ---------- */
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px 44px;
 }
 
 .section-title,
 .page-title {
-  font-family: var(--font-heading);
-  font-weight: 600;
   font-size: clamp(2rem, 4vw, 2.75rem);
   color: var(--color-burgundy);
-  margin-bottom: 14px;
-  line-height: 1.2;
+  margin: 16px 0 14px;
 }
 
 .divider-gold {
@@ -131,32 +155,114 @@ a, button {
   background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
-/* ---------- Shared button ---------- */
+/* ---------- Watermark type (decorative giant letters) ---------- */
+.watermark {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: currentColor;
+  opacity: 0.05;
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ---------- Page banner (dark editorial header for interior pages) ---------- */
+.page-banner {
+  position: relative;
+  background: linear-gradient(160deg, var(--color-dark) 0%, var(--color-dark-soft) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 168px 24px 76px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.page-banner .watermark {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: min(40vw, 320px);
+  color: #fff;
+  z-index: 0;
+}
+
+.page-banner .kicker {
+  position: relative;
+  z-index: 1;
+  color: var(--color-gold);
+}
+
+.page-banner h1 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(2.3rem, 5.5vw, 3.5rem);
+  color: #fff;
+  margin: 18px 0 0;
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    padding: 140px 20px 56px;
+  }
+}
+
+/* ---------- Buttons (editorial: sharp corners, tracked caps) ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 14px 34px;
-  border-radius: var(--radius-full);
-  font-family: var(--font-body);
-  font-size: 1rem;
+  padding: 16px 38px;
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   border: 1.5px solid transparent;
   transition: all var(--transition);
+  white-space: nowrap;
 }
 
 .btn-primary {
   background: var(--color-rose-dark);
   color: #fff;
-  box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
   background: var(--color-burgundy);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+.btn-ghost:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--color-burgundy);
+}
+
+.btn-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 7px;
+  border-bottom: 1.5px solid currentColor;
+  transition: gap var(--transition), opacity var(--transition);
+  width: fit-content;
+}
+
+.btn-line:hover {
+  gap: 20px;
 }

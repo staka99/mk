@@ -1,30 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, MatIconModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 
-  menuOpen: boolean = false;
-  screenWidth = window.innerWidth;
+  menuOpen = false;
   isScrolled = false;
-
-  constructor(private router: Router) {
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.screenWidth = event.target.innerWidth;
-
-    if (this.screenWidth > 1024 && this.menuOpen) {
-      this.menuOpen = false;
-    }
-  }
 
   @HostListener('window:scroll')
   onScroll() {
@@ -33,5 +21,13 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+    document.body.style.overflow = this.menuOpen ? 'hidden' : '';
+  }
+
+  closeMenu() {
+    if (this.menuOpen) {
+      this.menuOpen = false;
+      document.body.style.overflow = '';
+    }
   }
 }
