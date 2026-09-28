@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { LightboxModule } from 'ngx-lightbox';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -17,13 +18,16 @@ interface Image {
   styleUrls: ['./galerija.component.css']
 })
 export class GalerijaComponent {
+  private http = inject(HttpClient);
+
   images: string[] = [];
   currentImageIndex: number | null = null;
 
   constructor() {
-    for (let i = 1; i <= 120; i++) {
-      this.images.push(`assets/galerija/${i}.webp`);
-    }
+    this.http.get<string[]>('assets/galerija.json').subscribe({
+      next: list => (this.images = list),
+      error: err => console.error('Ne mogu da učitam galeriju', err)
+    });
   }
 
   openImage(index: number) {
@@ -49,5 +53,4 @@ export class GalerijaComponent {
       this.currentImageIndex--;
     }
   }
-
 }

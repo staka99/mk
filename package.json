@@ -2,6 +2,8 @@
   "name": "mk",
   "version": "0.0.0",
   "scripts": {
+    "prestart": "node scripts/generate-gallery.mjs",
+    "prebuild": "node scripts/generate-gallery.mjs",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
